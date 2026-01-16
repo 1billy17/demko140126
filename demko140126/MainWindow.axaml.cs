@@ -31,10 +31,10 @@ public partial class MainWindow : Window
 
         TypeProductComboBox.ItemsSource = new List<string> { "Все" }.Concat(ctx.ProductTypes.Select(g => g.Title)).ToList();
         
-        DisplayServices();
+        DisplayProducts();
     }
 
-    public void DisplayServices()
+    public void DisplayProducts()
     {
         var temp = dataSourceProducts;
         products.Clear();
@@ -116,32 +116,47 @@ public partial class MainWindow : Window
         }
     }
     
+    private async void EditMenuItem_OnClick(object? sender, RoutedEventArgs e)
+    {
+        using var ctx = new Demko140126Context();
+        if (ProductsListBox.SelectedItem is Product selectedProductPresenter)
+        {
+            var product = ctx.Products.FirstOrDefault(a => a.Id == selectedProductPresenter.Id);
+            EditProductWindow editProductWindow = new EditProductWindow(product);
+            var updatedProduct = await editProductWindow.ShowDialog<Product>(this);
+            if (updatedProduct != null)
+            {
+                LoadData();
+            }
+        }
+    }
+    
     public void AddProductButton_OnClick(object? sender, RoutedEventArgs e)
     {
     }
     
     public void TitleProductComboBox_OnSelectionChanged(object? sender, RoutedEventArgs e)
     {
-        DisplayServices();
+        DisplayProducts();
     }
     
     public void WorkshopNumberComboBox_OnSelectionChanged(object? sender, RoutedEventArgs e)
     {
-        DisplayServices();
+        DisplayProducts();
     }
     
     public void MinCostComboBox_OnSelectionChanged(object? sender, RoutedEventArgs e)
     {
-        DisplayServices();
+        DisplayProducts();
     }
     
     public void TypeProductComboBox_OnSelectionChanged(object? sender, RoutedEventArgs e)
     {
-        DisplayServices();
+        DisplayProducts();
     }
     
     private void SearchTextBox_OnTextChanged(object? sender, TextChangedEventArgs e)
     {
-        DisplayServices();
+        DisplayProducts();
     }
 }

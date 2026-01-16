@@ -66,6 +66,11 @@
                         </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Изменить" Click="EditMenuItem_OnClick"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
             </ListBox>
         </Border>
     </DockPanel>

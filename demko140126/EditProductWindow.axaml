@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="demko140126.EditProductWindow"
+        Title="EditProductWindow">
+    <Grid ColumnDefinitions="1*, 1*" Margin="20">
+        <StackPanel Grid.Column="0" Orientation="Vertical" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,20,0">
+            <TextBox x:Name="TitleTextBox" Width="200" Watermark="Название продукта"/>
+            <TextBox x:Name="ArticleNumberTextBox" Width="200" Watermark="Артикул"/> 
+            <TextBox x:Name="WorkshopNumberTextBox" Width="200" Watermark="Номер цеха"/>
+            <TextBox x:Name="PersonCountTextBox" Width="200" Watermark="Кол-во работников"/>
+            <TextBox x:Name="MinCostTextBox" Width="200" Watermark="Мин. цена для агента"/> 
+            <ComboBox x:Name="ProductTypeComboBox" Width="200"/>
+            <Button Content="Сохранить" Width="120" Click="SaveProduct_OnClick"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Vertical" Spacing="10" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">
+            <Image Width="350" Height="660" x:Name="ProductImage"/>
+            <Button Width="120" Height="30" x:Name="SelectImageButton" Click="SelectImageButton_OnClick" Content="Выбрать фото" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>    
+</Window>

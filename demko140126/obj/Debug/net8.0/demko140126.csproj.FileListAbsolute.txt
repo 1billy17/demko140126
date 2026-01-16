@@ -146,3 +146,4 @@
 /Users/feitanportor/dev/C#/demko140126/demko140126/obj/Debug/net8.0/demko140.4827CADC.Up2Date
 /Users/feitanportor/dev/C#/demko140126/demko140126/obj/Debug/net8.0/demko140126.genruntimeconfig.cache
 /Users/feitanportor/dev/C#/demko140126/demko140126/obj/Debug/net8.0/ref/demko140126.dll
+/Users/feitanportor/dev/C#/demko140126/demko140126/obj/Debug/net8.0/demko140126.sourcelink.json

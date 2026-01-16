@@ -24,5 +24,8 @@ build_property.EnableCodeStyleSeverity =
 [/Users/feitanportor/dev/C\#/demko140126/demko140126/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/Users/feitanportor/dev/C\#/demko140126/demko140126/EditProductWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/Users/feitanportor/dev/C\#/demko140126/demko140126/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
