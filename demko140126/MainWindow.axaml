@@ -1,0 +1,72 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="demko140126.MainWindow"
+        x:CompileBindings="False"
+        Title="demko140126">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Spacing="10">
+            <TextBox x:Name="SearchTextBox" Width="125" Height="45" Watermark="Поиск" VerticalContentAlignment="Center" TextChanged="SearchTextBox_OnTextChanged"/>
+            <TextBlock Text="Наименование:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox x:Name="TitleComboBox" Width="125" Height="45" VerticalAlignment="Center" SelectionChanged="TitleProductComboBox_OnSelectionChanged">
+                <ComboBoxItem Content="Дефолт"/>
+                <ComboBoxItem Content="А - я"/>
+                <ComboBoxItem Content="Я - а"/>
+            </ComboBox>
+            <TextBlock Text="Номер цеха" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox x:Name="WorkshopNumberComboBox" Width="125" Height="45" VerticalAlignment="Center" SelectionChanged="WorkshopNumberComboBox_OnSelectionChanged">
+                <ComboBoxItem Content="Дефолт"/>
+                <ComboBoxItem Content="Убывание"/>
+                <ComboBoxItem Content="Возрастание"/>
+            </ComboBox>
+            <TextBlock Text="Минимальная цена" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox x:Name="MinCostComboBox" Width="125" Height="45" VerticalAlignment="Center" SelectionChanged="MinCostComboBox_OnSelectionChanged">
+                <ComboBoxItem Content="Дефолт"/>
+                <ComboBoxItem Content="Убывание"/>
+                <ComboBoxItem Content="Возрастание"/>
+            </ComboBox>
+            <TextBlock Text="Тип:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ComboBox x:Name="TypeProductComboBox" Width="125" Height="45" VerticalAlignment="Center" SelectionChanged="TypeProductComboBox_OnSelectionChanged"/>
+            <Button Content="Добавить продукт" x:Name="AddProductButton" Click="AddProductButton_OnClick" HorizontalAlignment="Center" VerticalAlignment="Center" Height="45"/>
+        </StackPanel>
+        <StackPanel Spacing="10" HorizontalAlignment="Center" Orientation="Horizontal" DockPanel.Dock="Bottom" Height="45">
+            <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="BackButton" Click="Back_OnClick" Content="Назад"/>
+            <TextBlock VerticalAlignment="Center" x:Name="CountProductsTextBlock"/>
+            <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" x:Name="NextButton" Click="Next_OnClick" Content="Вперед"/>
+        </StackPanel>
+        <Border>
+            <ListBox x:Name="ProductsListBox" Margin="10">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="5" Margin="5" Padding="10">
+                            <Grid ColumnDefinitions="100,*,100" VerticalAlignment="Center">
+                                <Border Width="80" Height="80" BorderThickness="1" BorderBrush="Gray" CornerRadius="5">
+                                    <Image Source="{Binding ParseImage}"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" Margin="15,0" VerticalAlignment="Center" Spacing="5">
+                                    <TextBlock>
+                                        <Run Text="{Binding ProductType.Title}"/>
+                                        <Run Text=" | "/>
+                                        <Run Text="{Binding Title}"/>
+                                    </TextBlock>
+                                    <TextBlock Text="{Binding ArticleNumber}"/>
+                                    <TextBlock Text="{Binding MaterialsLine}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Column="2" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding CalculatedCost}"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+    </DockPanel>
+</Window>

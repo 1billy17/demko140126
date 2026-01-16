@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demko140126", "demko140126\demko140126.csproj", "{8CEA8639-0648-4BCF-8777-E7F652C844DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CEA8639-0648-4BCF-8777-E7F652C844DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CEA8639-0648-4BCF-8777-E7F652C844DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CEA8639-0648-4BCF-8777-E7F652C844DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CEA8639-0648-4BCF-8777-E7F652C844DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
